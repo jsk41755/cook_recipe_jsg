@@ -11,30 +11,58 @@ import javafx.stage.Stage;
 public class Controller {
 	@FXML
 	private void clickmainmenu(MouseEvent event) {
-		
-			try {
-				Parent koreanfood = FXMLLoader.load(getClass().getResource("koreanfood.fxml"));
-			    Scene scene = new Scene(koreanfood);
 
-			    Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+		try {
+			Parent koreanfood = FXMLLoader.load(getClass().getResource("koreanfood.fxml"));
+			Scene scene = new Scene(koreanfood);
 
-			    primaryStage.setScene(scene);
-			    primaryStage.setTitle("recipe");
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
-		
+			Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("recipe");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 	@FXML
 	private void clickfoodmenu(MouseEvent event) {
 		try {
 			Parent cookingrecipe = FXMLLoader.load(getClass().getResource("cookingrecipe.fxml"));
-		    Scene scene = new Scene(cookingrecipe);
+			Scene scene = new Scene(cookingrecipe);
 
-		    Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+			Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
 
-		    primaryStage.setScene(scene);
-		    primaryStage.setTitle("recipe");
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("recipe");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML
+	private void clickBackMain(MouseEvent event) {
+		try {
+			Parent koreanfood = FXMLLoader.load(getClass().getResource("mainmenu.fxml"));
+			Scene scene = new Scene(koreanfood);
+
+			Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("recipe");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML
+	private void clickBackKor(MouseEvent event) {
+		try {
+			Parent mainmenu = FXMLLoader.load(getClass().getResource("koreanfood.fxml"));
+			Scene scene = new Scene(mainmenu);
+
+			Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("recipe");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: yellow;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-   <children>
+<AnchorPane fx:controller="application.Controller" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children> 
       <Label layoutX="278.0" layoutY="35.0" text="음식이름">
          <font>
             <Font size="61.0" />
@@ -26,5 +26,10 @@
             <Font size="35.0" />
          </font>
       </Label>
+      <ImageView fitHeight="72.0" fitWidth="132.0" layoutX="31.0" layoutY="23.0" onMouseClicked="#clickBackKor" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/reply%20(2).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
