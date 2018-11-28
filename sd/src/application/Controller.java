@@ -18,14 +18,16 @@ public class Controller {
     private Label food;
     @FXML
     private GridPane grid;
+    
     @FXML
     private void clickmainmenu(MouseEvent event) {
 
         try {
-            Parent koreanfood = FXMLLoader.load(getClass().getResource("koreanfood.fxml"));
-            Scene scene = new Scene(koreanfood);
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Food.fxml"));
+			Parent food=loader.load();
+			Scene scene = new Scene(food);
             Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-
+            
             Node node = (Node) event.getSource();
             Parent p = node.getParent();
 
@@ -39,39 +41,11 @@ public class Controller {
             System.out.println("r : "+row+" c : "+column);
             primaryStage.setScene(scene);
             primaryStage.setTitle("recipe");
-            if(row==0) {
-                switch(column) {
-                case 0:
-                    food.setText("한식");
-                    break;
-                case 1:
-                    food.setText("중식");
-                    break;
-                case 2:
-                    food.setText("일식");
-                    break;
-                case 3:
-                    food.setText("양식");
-                    break;      
-                }
-            }
-            else if(row==1) {
-                switch(column) {
-                case 0:
-                    food.setText("분식");
-                    break;
-                case 1:
-                    food.setText("야식");
-                    break;
-                case 2:
-                    food.setText("랜덤");
-                    break;
-                case 3:
-                    food.setText("ㅋ");
-                    break;      
-                }
-            }           
             
+            Controller2 controller2 = 
+					loader.getController();
+			
+			controller2.initData(row,column);           
             
         } catch(Exception e) {
             e.printStackTrace();

@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller2">
    <children>
-      <Label fx:id="food" layoutX="327.0" layoutY="14.0" prefHeight="99.0" prefWidth="146.0" text=" ">
+      <Label fx:id="food" layoutX="327.0" layoutY="14.0" prefHeight="99.0" prefWidth="193.0" text=" 한식">
          <font>
             <Font size="70.0" />
          </font>
