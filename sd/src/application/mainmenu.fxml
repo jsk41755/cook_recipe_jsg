@@ -32,21 +32,20 @@
                      <image>
                         <Image url="@../../../resources/iconfinder_Food_C226_2427886.png" />
                      </image></ImageView>
-                  <Label layoutX="54.0" layoutY="119.0" text="한식">
+                  <Label layoutX="54.0" layoutY="119.0" text="밥">
                      <font>
                         <Font size="21.0" />
                      </font></Label>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button layoutY="1.0" mnemonicParsing="false" onMouseClicked="#clickmainmenu" prefHeight="123.0" prefWidth="119.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="114.0" fitWidth="116.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../resources/dim-sum.png" />
+                        <Image url="@../../../resources/noodles.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="54.0" layoutY="119.0" text="중식">
+                  <Label layoutX="54.0" layoutY="119.0" text="면">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -55,7 +54,7 @@
             </AnchorPane>
             <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2">
                <children>
-                  <Label layoutX="51.0" layoutY="121.0" text="일식">
+                  <Label layoutX="51.0" layoutY="121.0" text="고기">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -70,7 +69,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3">
                <children>
                   <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="17.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="51.0" layoutY="121.0" text="양식">
+                  <Label layoutX="51.0" layoutY="121.0" text="탕, 국">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -79,7 +78,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
                <children>
                   <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="17.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="51.0" layoutY="114.0" text="분식">
+                  <Label layoutX="51.0" layoutY="114.0" text="야채">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -88,7 +87,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="21.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="51.0" layoutY="114.0" text="야식">
+                  <Label layoutX="22.0" layoutY="119.0" text="편의점 요리">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -108,13 +107,15 @@
                   <ImageView fitHeight="114.0" fitWidth="130.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../resources/food.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                   <Label layoutX="10.0" layoutY="119.0" text="너만의 레시피">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Label>
-               </children></AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
       </GridPane>
    </children>

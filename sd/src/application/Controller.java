@@ -12,86 +12,97 @@ import javafx.stage.Stage;
 
 public class Controller {
 	private static int toIndex(Integer value) {
-	    return value == null ? 0 : value;
+		return value == null ? 0 : value;
 	}
-    @FXML
-    private Label food;
-    @FXML
-    private GridPane grid;
-    
-    @FXML
-    private void clickmainmenu(MouseEvent event) {
+	@FXML
+	private Label food;
+	@FXML
+	private GridPane grid;
 
-        try {
+	@FXML
+	private void clickmainmenu(MouseEvent event) {
+
+		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Food.fxml"));
 			Parent food=loader.load();
 			Scene scene = new Scene(food);
-            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-            
-            Node node = (Node) event.getSource();
-            Parent p = node.getParent();
+			Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
 
-            while (p != grid) {
-                node = p;
-                p = p.getParent();
-            }
+			Node node = (Node) event.getSource();
+			Parent p = node.getParent();
 
-            int row = toIndex(GridPane.getRowIndex(node));
-            int column = toIndex(GridPane.getColumnIndex(node));
-            System.out.println("r : "+row+" c : "+column);
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("recipe");
-            
-            Controller2 controller2 = 
+			while (p != grid) {
+				node = p;
+				p = p.getParent();
+			}
+
+			int row = toIndex(GridPane.getRowIndex(node));
+			int column = toIndex(GridPane.getColumnIndex(node));
+			System.out.println("r : "+row+" c : "+column);
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("recipe");
+
+			Controller2 controller2 = 
 					loader.getController();
 			
-			controller2.initData(row,column);           
-            
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+			DBDAO dao = new DBDAO();
+			DBDTO dto[]=new DBDTO[4];
+			for(int i=0;i<4;i++)
+				dto[i]=dao.search(row+column, i);//type,cook
 
-    }
-    @FXML
-    private void clickfoodmenu(MouseEvent event) {
-        try {
-            Parent cookingrecipe = FXMLLoader.load(getClass().getResource("cookingrecipe.fxml"));
-            Scene scene = new Scene(cookingrecipe);
+			dao.exitDB();
+			if(row==1&&column==2)
+				System.out.println("랜덤");
+			else if(row==1&&column==3)
+				System.out.println("나만의 레시피");
+			else
+				controller2.initData(row,column,dto);           
 
-            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("recipe");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-    private void clickBackMain(MouseEvent event) {
-        try {
-            Parent koreanfood = FXMLLoader.load(getClass().getResource("mainmenu.fxml"));
-            Scene scene = new Scene(koreanfood);
-
-            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("recipe");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-    private void clickBackKor(MouseEvent event) {
-        try {
-            Parent mainmenu = FXMLLoader.load(getClass().getResource("koreanfood.fxml"));
-            Scene scene = new Scene(mainmenu);
-
-            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("recipe");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
+	}
+	//    @FXML
+	//    private void clickfoodmenu(MouseEvent event) {
+	//        try {
+	//            Parent cookingrecipe = FXMLLoader.load(getClass().getResource("cookingrecipe.fxml"));
+	//            Scene scene = new Scene(cookingrecipe);
+	//
+	//            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+	//
+	//            primaryStage.setScene(scene);
+	//            primaryStage.setTitle("recipe");
+	//        } catch(Exception e) {
+	//            e.printStackTrace();
+	//        }
+	//    }
+	//    @FXML
+	//    private void clickBackMain(MouseEvent event) {
+	//        try {
+	//            Parent koreanfood = FXMLLoader.load(getClass().getResource("mainmenu.fxml"));
+	//            Scene scene = new Scene(koreanfood);
+	//
+	//            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+	//
+	//            primaryStage.setScene(scene);
+	//            primaryStage.setTitle("recipe");
+	//        } catch(Exception e) {
+	//            e.printStackTrace();
+	//        }
+	//    }
+	//    @FXML
+	//    private void clickBackKor(MouseEvent event) {
+	//        try {
+	//            Parent mainmenu = FXMLLoader.load(getClass().getResource("koreanfood.fxml"));
+	//            Scene scene = new Scene(mainmenu);
+	//
+	//            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+	//
+	//            primaryStage.setScene(scene);
+	//            primaryStage.setTitle("recipe");
+	//        } catch(Exception e) {
+	//            e.printStackTrace();
+	//        }
+	//    }
 }
