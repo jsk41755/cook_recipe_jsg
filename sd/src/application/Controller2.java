@@ -50,6 +50,7 @@ public class Controller2 {
 			switch(column) {
 			case 0:
 				food.setText("นไ");
+				
 				img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
 				image1.setImage(img);
 				name1.setWrapText(true);
@@ -226,11 +227,10 @@ public class Controller2 {
 
 			DBDAO dao = new DBDAO();
 			DBDTO dto = null;
-			dto=dao.search(n, row+column);//type,cook
+			dto=dao.search(n, row*3+column);//type,cook
 			dao.exitDB();
 			controller3.initRecipe(dto,n);
 //			controller3.initRecipe(n,row+column);
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

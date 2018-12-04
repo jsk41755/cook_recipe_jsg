@@ -110,7 +110,16 @@ public class DBDAO {
 				}
 				break;
 			case 2:
-				query = "select * from foodtable where food_id=2";
+				if(cook==0)
+					query = "select * from foodtable where food_id=2 AND recipe_id=0";
+				else if(cook==1)
+					query = "select * from foodtable where food_id=2 AND recipe_id=1";
+				else if(cook==2)
+					query = "select * from foodtable where food_id=2 AND recipe_id=2";
+				else if(cook==3)
+					query = "select * from foodtable where food_id=2 AND recipe_id=3";
+				else
+					query = "select * from foodtable where food_id=2 AND recipe_id=4";
 				pstmt = conn.prepareStatement(query);
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
@@ -123,7 +132,16 @@ public class DBDAO {
 				}
 				break;
 			case 3:
-				query = "select * from foodtable where food_id=3";
+				if(cook==0)
+					query = "select * from foodtable where food_id=3 AND recipe_id=0";
+				else if(cook==1)
+					query = "select * from foodtable where food_id=3 AND recipe_id=1";
+				else if(cook==2)
+					query = "select * from foodtable where food_id=3 AND recipe_id=2";
+				else if(cook==3)
+					query = "select * from foodtable where food_id=3 AND recipe_id=3";
+				else
+					query = "select * from foodtable where food_id=3 AND recipe_id=4";
 				pstmt = conn.prepareStatement(query);
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
@@ -136,7 +154,16 @@ public class DBDAO {
 				}
 				break;
 			case 4:
-				query = "select * from foodtable where food_id=4";
+				if(cook==0)
+					query = "select * from foodtable where food_id=4 AND recipe_id=0";
+				else if(cook==1)
+					query = "select * from foodtable where food_id=4 AND recipe_id=1";
+				else if(cook==2)
+					query = "select * from foodtable where food_id=4 AND recipe_id=2";
+				else if(cook==3)
+					query = "select * from foodtable where food_id=4 AND recipe_id=3";
+				else
+					query = "select * from foodtable where food_id=4 AND recipe_id=4";
 				pstmt = conn.prepareStatement(query);
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
@@ -149,7 +176,16 @@ public class DBDAO {
 				}
 				break;
 			case 5:
-				query = "select * from foodtable where food_id=5";
+				if(cook==0)
+					query = "select * from foodtable where food_id=5 AND recipe_id=0";
+				else if(cook==1)
+					query = "select * from foodtable where food_id=5 AND recipe_id=1";
+				else if(cook==2)
+					query = "select * from foodtable where food_id=5 AND recipe_id=2";
+				else if(cook==3)
+					query = "select * from foodtable where food_id=5 AND recipe_id=3";
+				else
+					query = "select * from foodtable where food_id=5 AND recipe_id=4";
 				pstmt = conn.prepareStatement(query);
 				rs = pstmt.executeQuery();
 				while(rs.next()) {

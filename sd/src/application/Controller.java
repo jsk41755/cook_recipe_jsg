@@ -48,8 +48,9 @@ public class Controller {
 			DBDAO dao = new DBDAO();
 			DBDTO dto[]=new DBDTO[4];
 			for(int i=0;i<4;i++)
-				dto[i]=dao.search(row+column, i);//type,cook
-
+				dto[i]=dao.search(row*4+column, i);//type,cook
+			for(int i=0;i<4;i++)
+				System.out.println(dto[i].getRecipe_name());
 			dao.exitDB();
 			if(row==1&&column==2)
 				System.out.println("·£´ý");
@@ -61,48 +62,5 @@ public class Controller {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-	//    @FXML
-	//    private void clickfoodmenu(MouseEvent event) {
-	//        try {
-	//            Parent cookingrecipe = FXMLLoader.load(getClass().getResource("cookingrecipe.fxml"));
-	//            Scene scene = new Scene(cookingrecipe);
-	//
-	//            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-	//
-	//            primaryStage.setScene(scene);
-	//            primaryStage.setTitle("recipe");
-	//        } catch(Exception e) {
-	//            e.printStackTrace();
-	//        }
-	//    }
-	//    @FXML
-	//    private void clickBackMain(MouseEvent event) {
-	//        try {
-	//            Parent koreanfood = FXMLLoader.load(getClass().getResource("mainmenu.fxml"));
-	//            Scene scene = new Scene(koreanfood);
-	//
-	//            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-	//
-	//            primaryStage.setScene(scene);
-	//            primaryStage.setTitle("recipe");
-	//        } catch(Exception e) {
-	//            e.printStackTrace();
-	//        }
-	//    }
-	//    @FXML
-	//    private void clickBackKor(MouseEvent event) {
-	//        try {
-	//            Parent mainmenu = FXMLLoader.load(getClass().getResource("koreanfood.fxml"));
-	//            Scene scene = new Scene(mainmenu);
-	//
-	//            Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-	//
-	//            primaryStage.setScene(scene);
-	//            primaryStage.setTitle("recipe");
-	//        } catch(Exception e) {
-	//            e.printStackTrace();
-	//        }
-	//    }
 }

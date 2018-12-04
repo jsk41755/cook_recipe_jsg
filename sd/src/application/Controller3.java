@@ -28,7 +28,7 @@ public class Controller3 {
 //			case 0:
 		this.n=n;
 				recipe.setWrapText(true);
-				ingredient.setWrapText(true);
+				ingredient.setWrapText(true); 
 				order.setWrapText(true);
 				recipe.setText(dto.getRecipe_name());
 				ingredient.setText(dto.getRecipe_ingredient());
@@ -42,39 +42,7 @@ public class Controller3 {
 //						"5. 라면 위에 숙주, 대파, 삼겹살, 삶은 달걀을올려 완성한다.");
 //			}
 		}
-//		if(row==0) {
-//			switch(column) {
-//			case 0:
-//				recipe.setText("한식");
-//				break;
-//			case 1:
-//				recipe.setText("중식");
-//				break;
-//			case 2:
-//				recipe.setText("일식");
-//				break;
-//			case 3:
-//				recipe.setText("양식");
-//				break;      
-//			}
-//		}
-//		else if(row==1) {
-//			switch(column) {
-//			case 0:
-//				recipe.setText("분식");
-//				break;
-//			case 1:
-//				recipe.setText("야식");
-//				break;
-//			case 2:
-//				recipe.setText("랜덤");
-//				break;
-//			case 3:
-//				recipe.setText("ㅋ");
-//				break;      
-//			}
-//		}           
-//	}
+
 	@FXML
     private void clickBackFood(MouseEvent event) {
 		try {
@@ -82,18 +50,7 @@ public class Controller3 {
 			Parent food=loader.load();
 			Scene scene = new Scene(food);
 			Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-//
-//			Node node = (Node) event.getSource();
-//			Parent p = node.getParent();
-//
-//			while (p != grid) {
-//				node = p;
-//				p = p.getParent();
-//			}
-//
-//			int row = toIndex(GridPane.getRowIndex(node));
-//			int column = toIndex(GridPane.getColumnIndex(node));
-//			System.out.println("r : "+row+" c : "+column);
+
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("recipe");
 
