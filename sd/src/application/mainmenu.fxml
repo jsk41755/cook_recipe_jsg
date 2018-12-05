@@ -7,115 +7,206 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <Label layoutX="300.0" layoutY="47.0" prefHeight="94.0" prefWidth="220.0" text="뭐먹어">
+      <ImageView fitHeight="600.0" fitWidth="400.0">
+         <image>
+            <Image url="@../../../resources/background.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="47.0" layoutY="74.0" prefHeight="133.0" prefWidth="306.0" style="-fx-background-color: rgb(255,186,24);">
          <font>
             <Font size="72.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="103.0" fitWidth="306.0">
+               <image>
+                  <Image url="@../../../resources/new_logo.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Label>
-      <GridPane fx:id="grid" hgap="30.0" layoutX="70.0" layoutY="200.0" prefHeight="320.0" prefWidth="682.0" vgap="30.0">
+      <GridPane fx:id="grid" hgap="30.0" layoutX="435.0" layoutY="50.0" prefHeight="500.0" prefWidth="324.0" vgap="30.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="107.0" prefWidth="149.0" GridPane.columnIndex="1">
                <children>
-                  <ImageView fitHeight="101.0" fitWidth="103.0" layoutX="27.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="107.0" fitWidth="153.0" layoutY="1.0">
                      <image>
-                        <Image url="@../../../resources/iconfinder_Food_C226_2427886.png" />
+                        <Image url="@../../../resources/line3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="37.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../../../resources/noodle.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="66.0" layoutY="80.0" prefHeight="28.0" prefWidth="20.0">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="66.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/면.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="107.0" prefWidth="149.0">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="153.0" layoutY="-2.0">
+                     <image>
+                        <Image url="@../../../resources/line3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="38.0" layoutY="12.0">
+                     <image>
+                        <Image url="@../../../resources/rice.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="60.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/밥.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="107.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="154.0">
+                     <image>
+                        <Image url="@../../../resources/line3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="37.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../../../resources/stew.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="56.0" layoutY="82.0">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="25.0" fitWidth="42.0" layoutX="56.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/찌개.png" />
                      </image></ImageView>
-                  <Label layoutX="54.0" layoutY="119.0" text="밥">
-                     <font>
-                        <Font size="21.0" />
-                     </font></Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               </children></AnchorPane>
+            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="107.0" prefWidth="149.0" GridPane.rowIndex="1">
                <children>
-                  <ImageView fitHeight="114.0" fitWidth="116.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="107.0" fitWidth="153.0" layoutY="-1.0">
                      <image>
-                        <Image url="@../../../resources/noodles.png" />
+                        <Image url="@../../../resources/line3.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="54.0" layoutY="119.0" text="면">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2">
-               <children>
-                  <Label layoutX="51.0" layoutY="121.0" text="고기">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="128.0" fitWidth="122.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="37.0" layoutY="13.0">
                      <image>
-                        <Image url="@../../../resources/iconfinder_Food_C212_2427856.png" />
+                        <Image url="@../../../resources/menu_meat.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="56.0" layoutY="80.0" prefHeight="25.0" prefWidth="42.0">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="25.0" fitWidth="52.0" layoutX="54.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/고기.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3">
+            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="107.0" prefWidth="149.0" GridPane.rowIndex="2">
                <children>
-                  <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="17.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="51.0" layoutY="121.0" text="탕, 국">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children></AnchorPane>
-            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
-               <children>
-                  <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="17.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="51.0" layoutY="114.0" text="야채">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children></AnchorPane>
-            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="21.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="22.0" layoutY="119.0" text="편의점 요리">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children></AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <children>
-                  <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="17.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="51.0" layoutY="114.0" text="랜덤">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children></AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <children>
-                  <ImageView fitHeight="114.0" fitWidth="130.0" layoutX="11.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="107.0" fitWidth="153.0">
                      <image>
-                        <Image url="@../../../resources/food.png" />
+                        <Image url="@../../../resources/line3.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="10.0" layoutY="119.0" text="너만의 레시피">
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="37.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/menu_salad.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="28.0" fitWidth="62.0" layoutX="47.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/salad_1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane onMouseClicked="#clickmainmenu" prefHeight="107.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="153.0">
+                     <image>
+                        <Image url="@../../../resources/line3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="37.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/store.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="34.0" layoutY="81.0">
                      <font>
                         <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="97.0" layoutX="29.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/편의점%20요리.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="107.0" prefWidth="149.0" GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="153.0">
+                     <image>
+                        <Image url="@../../../resources/line3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="37.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../../../resources/random.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="35.0" layoutY="82.0" prefHeight="25.0" prefWidth="85.0" text="RANDOM">
+                     <font>
+                        <Font size="18.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
+            <AnchorPane onMouseClicked="#clickmypage" prefHeight="107.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="153.0">
+                     <image>
+                        <Image url="@../../../resources/line3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="37.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../../../resources/mypage.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="35.0" layoutY="81.0" prefHeight="25.0" prefWidth="85.0" text="MY PAGE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
          </children>
       </GridPane>
    </children>

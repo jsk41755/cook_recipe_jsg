@@ -48,13 +48,13 @@ public class Controller {
 			DBDAO dao = new DBDAO();
 			DBDTO dto[]=new DBDTO[4];
 			for(int i=0;i<4;i++)
-				dto[i]=dao.search(row*4+column, i);//type,cook
+				dto[i]=dao.search(row*2+column, i);//type,cook
 			for(int i=0;i<4;i++)
 				System.out.println(dto[i].getRecipe_name());
 			dao.exitDB();
-			if(row==1&&column==2)
+			if(row==3&&column==0)
 				System.out.println("랜덤");
-			else if(row==1&&column==3)
+			else if(row==3&&column==1)
 				System.out.println("나만의 레시피");
 			else
 				controller2.initData(row,column,dto);           
@@ -63,4 +63,17 @@ public class Controller {
 			e.printStackTrace();
 		}
 	}
+	 @FXML
+	    public void clickmypage(MouseEvent event) {
+	    	try {
+	    		Parent members = FXMLLoader.load(getClass().getResource("Mypage_login.fxml"));
+	    		Scene scene=new Scene(members);
+	    		Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+	    		stage.setScene(scene);
+	            
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+
+		}
 }

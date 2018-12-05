@@ -2,6 +2,7 @@ package application;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Controller2 {
+	
 	@FXML
 	private Label food;
 	@FXML
@@ -23,10 +25,7 @@ public class Controller2 {
 	private ImageView image3;
 	@FXML
 	private ImageView image4;
-	@FXML
-	private ImageView image5;
-	@FXML
-	private ImageView image6;
+
 	@FXML
 	private Label name1;
 	@FXML
@@ -35,172 +34,189 @@ public class Controller2 {
 	private Label name3;
 	@FXML
 	private Label name4;
-	@FXML
-	private Label name5;
-	@FXML
-	private Label name6;
+	
 	@FXML
 	private GridPane grid;
 	int n;
 	void initData(int row,int column,DBDTO dto[]) {
 		System.out.println(row+" and "+column);
-		n=4*row+column;
+		n=2*row+column;
 		Image img;
-		if(row==0) {
-			switch(column) {
-			case 0:
-				food.setText("밥");
-				
-				img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
-				image1.setImage(img);
-				name1.setWrapText(true);
-				name1.setText(dto[0].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
-				image2.setImage(img);
-				name2.setWrapText(true);
-				name2.setText(dto[1].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
-				image3.setImage(img);
-				name3.setWrapText(true);
-				name3.setText(dto[2].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
-				image4.setImage(img);
-				name4.setWrapText(true);
-				name4.setText(dto[3].getRecipe_name());
-				break;
-			case 1:
-				food.setText("면");
-				
-				img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
-				image1.setImage(img);
-				name1.setWrapText(true);
-				name1.setText(dto[0].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
-				image2.setImage(img);
-				name2.setWrapText(true);
-				name2.setText(dto[1].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
-				image3.setImage(img);
-				name3.setWrapText(true);
-				name3.setText(dto[2].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
-				image4.setImage(img);
-				name4.setWrapText(true);
-				name4.setText(dto[3].getRecipe_name());
-//				
-				break;
-			case 2:
-				food.setText("고기");
-				img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
-				image1.setImage(img);
-				name1.setWrapText(true);
-				name1.setText(dto[0].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
-				image2.setImage(img);
-				name2.setWrapText(true);
-				name2.setText(dto[1].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
-				image3.setImage(img);
-				name3.setWrapText(true);
-				name3.setText(dto[2].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
-				image4.setImage(img);
-				name4.setWrapText(true);
-				name4.setText(dto[3].getRecipe_name());
-				break;
-			case 3:
-				food.setText("탕, 국");
-				img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
-				image1.setImage(img);
-				name1.setWrapText(true);
-				name1.setText(dto[0].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
-				image2.setImage(img);
-				name2.setWrapText(true);
-				name2.setText(dto[1].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
-				image3.setImage(img);
-				name3.setWrapText(true);
-				name3.setText(dto[2].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
-				image4.setImage(img);
-				name4.setWrapText(true);
-				name4.setText(dto[3].getRecipe_name());
-				break;      
-			}
-		}
-		else if(row==1) {
-			switch(column) {
-			case 0:
-				food.setText("야채");
-				img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
-				image1.setImage(img);
-				name1.setWrapText(true);
-				name1.setText(dto[0].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
-				image2.setImage(img);
-				name2.setWrapText(true);
-				name2.setText(dto[1].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
-				image3.setImage(img);
-				name3.setWrapText(true);
-				name3.setText(dto[2].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
-				image4.setImage(img);
-				name4.setWrapText(true);
-				name4.setText(dto[3].getRecipe_name());
-				break;
-			case 1:
-				food.setText("편의점 요리");
-				img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
-				image1.setImage(img);
-				name1.setWrapText(true);
-				name1.setText(dto[0].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
-				image2.setImage(img);
-				name2.setWrapText(true);
-				name2.setText(dto[1].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
-				image3.setImage(img);
-				name3.setWrapText(true);
-				name3.setText(dto[2].getRecipe_name());
-				
-				img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
-				image4.setImage(img);
-				name4.setWrapText(true);
-				name4.setText(dto[3].getRecipe_name());
-				break;
-//			case 2:
-//				food.setText("랜덤");
-//				break;
-//			case 3:
-//				food.setText("");
-//				break;      
-			}
+		img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
+		image1.setImage(img);
+		name1.setWrapText(true);
+		name1.setText(dto[0].getRecipe_name());
+		name1.setAlignment(Pos.CENTER);
+		img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
+		image2.setImage(img);
+		name2.setWrapText(true);
+		name2.setText(dto[1].getRecipe_name());
+		name2.setAlignment(Pos.CENTER);
+		img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
+		image3.setImage(img);
+		name3.setWrapText(true);
+		name3.setText(dto[2].getRecipe_name());
+		name3.setAlignment(Pos.CENTER);
+		img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
+		image4.setImage(img);
+		name4.setWrapText(true);
+		name4.setText(dto[3].getRecipe_name());
+		name4.setAlignment(Pos.CENTER);
+		switch(n) {
+		case 0:
+			food.setText("밥");
+			food.setAlignment(Pos.CENTER);
+
+			//			img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
+			//			image1.setImage(img);
+			//			name1.setWrapText(true);
+			//			name1.setText(dto[0].getRecipe_name());
+			//			name1.setAlignment(Pos.CENTER);
+			//			img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
+			//			image2.setImage(img);
+			//			name2.setWrapText(true);
+			//			name2.setText(dto[1].getRecipe_name());
+			//			name2.setAlignment(Pos.CENTER);
+			//			img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
+			//			image3.setImage(img);
+			//			name3.setWrapText(true);
+			//			name3.setText(dto[2].getRecipe_name());
+			//			name3.setAlignment(Pos.CENTER);
+			//			img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
+			//			image4.setImage(img);
+			//			name4.setWrapText(true);
+			//			name4.setText(dto[3].getRecipe_name());
+			//			name4.setAlignment(Pos.CENTER);
+			break;
+		case 1:
+			food.setText("면");
+			food.setAlignment(Pos.CENTER);
+
+			//			img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
+			//			image1.setImage(img);
+			//			name1.setWrapText(true);
+			//			name1.setText(dto[0].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
+			//			image2.setImage(img);
+			//			name2.setWrapText(true);
+			//			name2.setText(dto[1].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
+			//			image3.setImage(img);
+			//			name3.setWrapText(true);
+			//			name3.setText(dto[2].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
+			//			image4.setImage(img);
+			//			name4.setWrapText(true);
+			//			name4.setText(dto[3].getRecipe_name());
+			//				
+			break;
+		case 2:
+			food.setText("고기");
+			food.setAlignment(Pos.CENTER);
+
+			//			img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
+			//			image1.setImage(img);
+			//			name1.setWrapText(true);
+			//			name1.setText(dto[0].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
+			//			image2.setImage(img);
+			//			name2.setWrapText(true);
+			//			name2.setText(dto[1].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
+			//			image3.setImage(img);
+			//			name3.setWrapText(true);
+			//			name3.setText(dto[2].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
+			//			image4.setImage(img);
+			//			name4.setWrapText(true);
+			//			name4.setText(dto[3].getRecipe_name());
+			break;
+		case 3:
+			food.setText("찌개");
+			food.setAlignment(Pos.CENTER);
+
+			//			img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
+			//			image1.setImage(img);
+			//			name1.setWrapText(true);
+			//			name1.setText(dto[0].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
+			//			image2.setImage(img);
+			//			name2.setWrapText(true);
+			//			name2.setText(dto[1].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
+			//			image3.setImage(img);
+			//			name3.setWrapText(true);
+			//			name3.setText(dto[2].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
+			//			image4.setImage(img);
+			//			name4.setWrapText(true);
+			//			name4.setText(dto[3].getRecipe_name());
+			break;      
+		case 4:
+			food.setText("야채");
+			food.setAlignment(Pos.CENTER);
+
+			//			img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
+			//			image1.setImage(img);
+			//			name1.setWrapText(true);
+			//			name1.setText(dto[0].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
+			//			image2.setImage(img);
+			//			name2.setWrapText(true);
+			//			name2.setText(dto[1].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
+			//			image3.setImage(img);
+			//			name3.setWrapText(true);
+			//			name3.setText(dto[2].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
+			//			image4.setImage(img);
+			//			name4.setWrapText(true);
+			//			name4.setText(dto[3].getRecipe_name());
+			break;
+		case 5:
+			food.setText("편의점 요리");
+			food.setWrapText(true);
+			food.setAlignment(Pos.CENTER);
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[0].getRecipe_image()));
+			//			image1.setImage(img);
+			//			name1.setWrapText(true);
+			//			name1.setText(dto[0].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[1].getRecipe_image()));
+			//			image2.setImage(img);
+			//			name2.setWrapText(true);
+			//			name2.setText(dto[1].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[2].getRecipe_image()));
+			//			image3.setImage(img);
+			//			name3.setWrapText(true);
+			//			name3.setText(dto[2].getRecipe_name());
+			//
+			//			img = new Image(getClass().getResourceAsStream(dto[3].getRecipe_image()));
+			//			image4.setImage(img);
+			//			name4.setWrapText(true);
+			//			name4.setText(dto[3].getRecipe_name());
+			break;
 		}           
 	}
 	private static int toIndex(Integer value) {
 		return value == null ? 0 : value;
 	}
 
-	
+
 	@FXML
 	private void clickfoodmenu(MouseEvent event) {
 		try {
@@ -227,14 +243,15 @@ public class Controller2 {
 
 			DBDAO dao = new DBDAO();
 			DBDTO dto = null;
-			dto=dao.search(n, row*3+column);//type,cook
+			dto=dao.search(n, row*2+column);//type,cook
 			dao.exitDB();
 			controller3.initRecipe(dto,n);
-//			controller3.initRecipe(n,row+column);
+			//			controller3.initRecipe(n,row+column);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 	@FXML
 	private void clickBackMain(MouseEvent event) {
 		try {

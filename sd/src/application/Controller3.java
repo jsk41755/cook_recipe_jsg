@@ -7,8 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Controller3 {
@@ -18,6 +19,8 @@ public class Controller3 {
 	private TextArea ingredient;
 	@FXML
 	private TextArea order;
+	@FXML
+	private ImageView recipeimage;
 	int n;
 	
 	void initRecipe(DBDTO dto,int n) {
@@ -33,6 +36,8 @@ public class Controller3 {
 				recipe.setText(dto.getRecipe_name());
 				ingredient.setText(dto.getRecipe_ingredient());
 				order.setText(dto.getRecipe_sequence());
+				Image img = new Image(getClass().getResourceAsStream(dto.getRecipe_image()));
+				recipeimage.setImage(img);
 //				recipe.setText("¸Å¿î»ï°ã»ì µ·ÄÚÃ÷¶ó¸à");
 //				ingredient.setText("´ëÆÄ 10cm, ¼÷ÁÖ 1ÁÜ, »îÀº´Þ°¿ 1/2°³, »ï°ã»ì 1ÁÙ, µ·ÄÚÃ÷¶ó¸à 1ºÀ,°£Àå 1¼ù°¡¶ô, ¿Ã¸®°í´ç 1/2¼ù°¡¶ô, ¸À¼ú 1¼ù°¡¶ô, ¹° 1¼ù°¡¶ô,´ëÆÄ 10cm, ¼÷ÁÖ 1ÁÜ, »îÀº´Þ°¿ 1/2°³");
 //				order.setText("1. »ï°ã»ìÀº ¿¹¿­µÈ ÆÒ¿¡ ³ë¸©ÇÏ°Ô ±Á´Â´Ù.\n"+
@@ -61,10 +66,10 @@ public class Controller3 {
 			DBDTO dto[]=new DBDTO[4];
 			for(int i=0;i<4;i++)
 				dto[i]=dao.search(n, i);//type,cook
-			int row=n/4;
-			int column=n%4;
+			int row=n/2;
+			int column=n%2;
 			dao.exitDB();
-			if(row==1&&column==2)
+			if(row==0&&column==3)
 				System.out.println("·£´ý");
 			else if(row==1&&column==3)
 				System.out.println("³ª¸¸ÀÇ ·¹½ÃÇÇ");
