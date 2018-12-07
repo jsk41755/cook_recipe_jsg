@@ -44,6 +44,7 @@ public class CountDownTimer {
         }
     }
 
+    
     public void reset() {
     	timeLeft = MainController.a;
     	 mLabel.setText(settime());
