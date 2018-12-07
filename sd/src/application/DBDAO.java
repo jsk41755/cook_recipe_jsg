@@ -18,7 +18,7 @@ public class DBDAO {
 		try {   			
 			Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL 드라이버 로드    
 			System.out.println("MySQL JDBC 드라이버 로딩 성공...");
-			conn = DriverManager.getConnection(  "jdbc:mysql://127.0.0.1:3306/fooddb?serverTimezone=UTC", "root","1223"); // JDBC 연결, password는 root 계정 패스워드 입력
+			conn = DriverManager.getConnection(  "jdbc:mysql://127.0.0.1:3306/fooddb?serverTimezone=UTC", "root","s8511730"); // JDBC 연결, password는 root 계정 패스워드 입력
 			System.out.println("DB 연결 완료");   
 			stmt = conn.createStatement(); // SQL문 처리용 Statement 객체 생성
 
@@ -72,10 +72,9 @@ public class DBDAO {
 				query = "select * from foodtable where food_id=0 AND recipe_id=1";
 			else if(cook==2)
 				query = "select * from foodtable where food_id=0 AND recipe_id=2";
-			else if(cook==3)
+			else 
 				query = "select * from foodtable where food_id=0 AND recipe_id=3";
-			else
-				query = "select * from foodtable where food_id=0 AND recipe_id=4";
+			
 			pstmt = conn.prepareStatement(query);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {

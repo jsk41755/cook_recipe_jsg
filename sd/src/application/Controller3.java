@@ -1,16 +1,21 @@
 package application;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 public class Controller3 {
 	@FXML
@@ -21,6 +26,12 @@ public class Controller3 {
 	private TextArea order;
 	@FXML
 	private ImageView recipeimage;
+	@FXML
+    private Label text;
+	
+	@FXML
+	private Button timerset;
+	
 	int n;
 	
 	void initRecipe(DBDTO dto,int n) {
@@ -80,4 +91,23 @@ public class Controller3 {
 			e.printStackTrace();
 		}
     }
+	public void timerset(ActionEvent event) throws Exception{
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/application/timer.fxml"));
+        Scene scene = new Scene(root);
+        //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+             public void handle(WindowEvent event) {
+                 CountDownTimer.getTimer().stop();
+             }
+          });
+  	
+  		text = (Label) root.lookup("#text");
+  	       text.setText("00:00");
+  	      CountDownTimer.getTimer().setLabel(text);
+}
 }
